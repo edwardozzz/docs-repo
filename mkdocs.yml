@@ -13,6 +13,7 @@ nav:
   - test: 3.md
   - page3: 4.md
   - iqbot: iQBot_API.md
+  - www: www.md
 
 plugins:
   - search
