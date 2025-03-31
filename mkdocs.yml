@@ -1,6 +1,6 @@
 site_name: "Документация проекта"
-theme:
-  name: "material"
+# theme:
+#   name: "material"
 
 extra:
   version:
@@ -16,3 +16,5 @@ nav:
 
 plugins:
   - search
+
+repo_url: https://github.com/edwardozzz/docs-repo
