@@ -1,0 +1,31 @@
+name: Deploy Docs
+
+on:
+  push:
+    branches:
+      - main  # Укажите вашу основную ветку, если это не 'main', а 'master'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        pip install mkdocs mike
+
+    - name: Build the docs
+      run: mkdocs build
+
+    - name: Deploy the docs
+      run: mike deploy v4.5.0  # Поставьте вашу нужную версию
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Токен для доступа к GitHub Pages или вашему серверу
