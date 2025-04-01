@@ -3,7 +3,7 @@ name: Deploy Docs
 on:
   push:
     branches:
-      - main  # Укажите вашу основную ветку, если это не 'main', а, например, 'master'
+      - main 
 
 jobs:
   build:
@@ -32,11 +32,8 @@ jobs:
     - name: Build the docs
       run: mkdocs build
 
-    # - name: Deploy the docs
-    #   run: mike deploy v4.5.0  # Поставьте вашу нужную версию
-
     - name: Deploy documentation to GitHub Pages
       run: |
           mike deploy v4.5.0 --push
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Токен для доступа к GitHub Pages или вашему серверу
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
