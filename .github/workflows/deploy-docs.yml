@@ -37,10 +37,10 @@ jobs:
         git push origin gh-pages
 
     - name: Build the docs
-      run: mkdocs build
+      run: mkdocs build -f docs-repo/mkdocs.yml  # Убедитесь, что путь к mkdocs.yml указан правильно
 
     - name: Deploy documentation to GitHub Pages
       run: |
         mike deploy v4.5.0 --push
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Токен для доступа к GitHub Pages или вашему серверу
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
