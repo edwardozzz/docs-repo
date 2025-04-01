@@ -14,7 +14,7 @@ nav:
   - page3: 4.md
   - iqbot: iQBot_API.md
   - www: www.md
-  - www2: www2.md
+  # - www2: www2.md
 
 plugins:
   - search
